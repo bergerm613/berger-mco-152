@@ -32,6 +32,11 @@ public class Projectile
         return velocity * sin(Math.toRadians(angle)) * time + (-GRAVITY * time * time);
     }
 
+    public double getTime()
+    {
+        return time;
+    }
+
     public String toString()
     {
         return  time + ": (" + String.format("%.4f", getX()) + ", " + String.format("%.4f", getY()) + ")";
