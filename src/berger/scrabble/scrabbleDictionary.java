@@ -3,7 +3,6 @@ package berger.scrabble;
 import java.io.BufferedReader;
 import java.io.*;
 import java.util.HashSet;
-import java.util.Iterator;
 
 public class scrabbleDictionary
 {
@@ -19,21 +18,19 @@ public class scrabbleDictionary
         String st;
         while ((st = br.readLine()) != null)
         {
-            dictionaryHash.add(st.split(" ")[0]);
+            dictionaryHash.add((st.split(" ")[0]).toLowerCase());
         }
     }
 
     public boolean wordInFile(String word)
     {
-        Iterator<String> itr = dictionaryHash.iterator();
-        while (itr.hasNext())
+        if (dictionaryHash.contains(word.toLowerCase()))
         {
-            if (itr.next().equalsIgnoreCase(word))
-            {
-                return true;
-            }
+            return true;
         }
-
-        return false;
+        else
+        {
+            return false;
+        }
     }
 }
