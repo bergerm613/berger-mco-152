@@ -1,6 +1,5 @@
 package berger.scrabble;
 
-import java.io.BufferedReader;
 import java.io.*;
 import java.util.HashSet;
 
@@ -24,13 +23,6 @@ public class scrabbleDictionary
 
     public boolean wordInFile(String word)
     {
-        if (wordHash.contains(word.toLowerCase()))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return wordHash.contains(word.toLowerCase());
     }
 }
