@@ -1,10 +1,9 @@
 package berger.scrabble;
 
 import org.junit.Test;
-
 import java.io.IOException;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class scrabbleDictionaryTest
 {
@@ -17,8 +16,7 @@ public class scrabbleDictionaryTest
 
         answer = test.wordInFile("hi");
 
-
-        assertEquals(answer, true);
+        assertTrue(answer);
     }
 
     @Test
@@ -30,8 +28,7 @@ public class scrabbleDictionaryTest
 
         answer = test.wordInFile("blibble");
 
-
-        assertEquals(answer, false);
+        assertFalse(answer);
     }
 
     @Test
@@ -43,7 +40,6 @@ public class scrabbleDictionaryTest
 
         answer = test.wordInFile("sLoWpOkEs");
 
-
-        assertEquals(answer, true);
+        assertTrue(answer);
     }
 }
