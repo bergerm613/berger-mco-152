@@ -37,9 +37,10 @@ public class MoneyTest
         Cash change = bob.pay(2.49, dollahs);
     }
 
-    @Test (expected = NotEnoughChangeException.class)
-    public void payInsufChange() throws NotEnoughChangeException
+    @Test
+    public void payInsufChange()
     {
+
         //given
         Cashier bob = new Cashier();
         Cash dollahs = new Cash();
@@ -47,7 +48,17 @@ public class MoneyTest
         bob.register.addQuarters(100);
         dollahs.addOneDollars(3);
 
-        //when
-        Cash change = bob.pay(2.49, dollahs);
+        double regBeforePay = bob.register.getTotal();
+
+        try
+        {
+            //when
+            Cash change = bob.pay(2.49, dollahs);
+
+        } catch (NotEnoughChangeException e)
+        {
+            //then
+            assertEquals(bob.register.getTotal(), regBeforePay, 0.01);
+        }
     }
 }

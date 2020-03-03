@@ -92,6 +92,8 @@ public class Cash
         fiveDollars += moneyToAdd.fiveDollars;
         tenDollars += moneyToAdd.tenDollars;
         twentyDollars += moneyToAdd.twentyDollars;
+
+        total += moneyToAdd.getTotal() * 100;
     }
 
     public int getPennies()

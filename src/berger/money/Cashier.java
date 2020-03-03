@@ -11,12 +11,11 @@ public class Cashier
 
         Cash change = register.remove(changeNeeded);
 
-        if ((register.getTotal() < changeNeeded) || (change.getTotal() < changeNeeded))
+        if (change.getTotal() < changeNeeded)
         {
+            register.add(change);
             throw new NotEnoughChangeException();
         }
-
-        register.add(moneyGiven);
 
         return change;
     }
