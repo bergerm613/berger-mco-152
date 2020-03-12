@@ -7,8 +7,9 @@ import java.io.IOException;
 
 public class ScrabbleFrame extends JFrame
 {
-    private JLabel answerLabel;
-    private JTextField wordField;
+    private final JLabel answerLabel;
+    private final JTextField wordField;
+    private scrabbleDictionary dictionary;
 
     public ScrabbleFrame()
     {
@@ -16,7 +17,7 @@ public class ScrabbleFrame extends JFrame
         setTitle("Scrabble Frame");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        setLayout(new FlowLayout());
+        setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
 
         wordField = new JTextField();
         wordField.setPreferredSize(new Dimension(160, 40));
@@ -26,22 +27,26 @@ public class ScrabbleFrame extends JFrame
 
         answerLabel = new JLabel();
         answerLabel.setPreferredSize(new Dimension(100, 40));
+        answerLabel.setOpaque(true);
+        answerLabel.setForeground(Color.WHITE);
 
         add(wordField);
         add(checkButton);
         add(answerLabel);
+
+        try
+        {
+            dictionary = new scrabbleDictionary();
+        } catch (IOException e)
+        {
+            e.printStackTrace();
+        }
     }
         public void checkWord()
         {
-            try
-            {
-                scrabbleDictionary dictionary = new scrabbleDictionary();
-                boolean isInDictionary = dictionary.wordInFile(wordField.getText());
-                answerLabel.setText(String.valueOf(isInDictionary));
-            } catch (IOException e)
-            {
-                e.printStackTrace();
-            }
+            boolean isInDictionary = dictionary.wordInFile(wordField.getText());
+            answerLabel.setText(String.valueOf(isInDictionary));
+            answerLabel.setBackground(isInDictionary? Color.GREEN : Color.RED);
         }
 
 
