@@ -181,7 +181,7 @@ public class Cash
     public void addTwentyDollars(int twentyDollars)
     {
         this.twentyDollars += twentyDollars;
-        total += twentyDollars * 20;
+        total += twentyDollars * 2000;
     }
 
     @Override

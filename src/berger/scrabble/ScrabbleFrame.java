@@ -2,7 +2,6 @@ package berger.scrabble;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 public class ScrabbleFrame extends JFrame
@@ -42,13 +41,13 @@ public class ScrabbleFrame extends JFrame
             e.printStackTrace();
         }
     }
-        public void checkWord()
-        {
-            boolean isInDictionary = dictionary.wordInFile(wordField.getText());
-            answerLabel.setText(String.valueOf(isInDictionary));
-            answerLabel.setBackground(isInDictionary? Color.GREEN : Color.RED);
-        }
 
+    public void checkWord()
+    {
+        boolean isInDictionary = dictionary.wordInFile(wordField.getText());
+        answerLabel.setText(String.valueOf(isInDictionary));
+        answerLabel.setBackground(isInDictionary? Color.GREEN : Color.RED);
+    }
 
 
     public static void main(String[] args)

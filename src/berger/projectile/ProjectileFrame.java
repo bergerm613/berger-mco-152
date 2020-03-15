@@ -12,6 +12,7 @@ public class ProjectileFrame extends JFrame
     private JButton calculateButton;
     private JLabel velocityLabel;
     private JLabel angleLabel;
+
     private JScrollPane scroll;
 
     private JPanel leftPanel;
@@ -25,9 +26,9 @@ public class ProjectileFrame extends JFrame
         setLayout(new BorderLayout());
 
         projectileCoordinates = new JTextArea();
+
         velocity = new JTextField();
         angle = new JTextField();
-
         calculateButton = new JButton("Calculate");
         calculateButton.addActionListener(actionEvent -> getProjectile());
 
