@@ -5,13 +5,12 @@ import java.util.HashSet;
 
 public class ScrabbleDictionary
 {
-    BufferedReader br;
     HashSet<String> wordHash;
 
     public ScrabbleDictionary() throws IOException
     {
         File file = new File("dictionary.txt");
-        br = new BufferedReader(new FileReader(file));
+        BufferedReader br = new BufferedReader(new FileReader(file));
         wordHash = new HashSet<String>();
 
         String st;
