@@ -3,12 +3,12 @@ package berger.scrabble;
 import java.io.*;
 import java.util.HashSet;
 
-public class scrabbleDictionary
+public class ScrabbleDictionary
 {
     BufferedReader br;
     HashSet<String> wordHash;
 
-    public scrabbleDictionary() throws IOException
+    public ScrabbleDictionary() throws IOException
     {
         File file = new File("dictionary.txt");
         br = new BufferedReader(new FileReader(file));

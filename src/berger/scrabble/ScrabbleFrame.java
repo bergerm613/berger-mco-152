@@ -8,7 +8,7 @@ public class ScrabbleFrame extends JFrame
 {
     private final JLabel answerLabel;
     private final JTextField wordField;
-    private scrabbleDictionary dictionary;
+    private ScrabbleDictionary dictionary;
 
     public ScrabbleFrame()
     {
@@ -35,7 +35,7 @@ public class ScrabbleFrame extends JFrame
 
         try
         {
-            dictionary = new scrabbleDictionary();
+            dictionary = new ScrabbleDictionary();
         } catch (IOException e)
         {
             e.printStackTrace();

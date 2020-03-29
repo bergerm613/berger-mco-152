@@ -11,7 +11,7 @@ public class scrabbleDictionaryTest
     //tests that a real word is in the dictionary
     public void realWordInFile() throws IOException
     {
-        scrabbleDictionary test = new scrabbleDictionary();
+        ScrabbleDictionary test = new ScrabbleDictionary();
         boolean answer = false;
 
         answer = test.wordInFile("hi");
@@ -23,7 +23,7 @@ public class scrabbleDictionaryTest
     //tests that a fake word is not in the dictionary
     public void fakeWordInFile() throws IOException
     {
-        scrabbleDictionary test = new scrabbleDictionary();
+        ScrabbleDictionary test = new ScrabbleDictionary();
         boolean answer = false;
 
         answer = test.wordInFile("blibble");
@@ -35,7 +35,7 @@ public class scrabbleDictionaryTest
     //tests that the method is not case sensitive
     public void caseWordInFile() throws IOException
     {
-        scrabbleDictionary test = new scrabbleDictionary();
+        ScrabbleDictionary test = new ScrabbleDictionary();
         boolean answer = false;
 
         answer = test.wordInFile("sLoWpOkEs");
